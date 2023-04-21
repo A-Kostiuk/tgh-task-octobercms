@@ -1,0 +1,13 @@
+title = "Courses"
+meta_title = "Courses"
+url = "/courses"
+layout = "default"
+==
+<h1 class="sr-only">Courses</h1>
+<div class="container flex flex-col gap-4 my-16 tablet:grid tablet:grid-cols-[1fr_3fr] tablet:gap-10" x-data>
+
+    {% partial 'blocks/courses-filter' %}
+
+    {% partial 'blocks/courses-list' %}
+
+</div>

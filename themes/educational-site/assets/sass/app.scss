@@ -1,0 +1,19 @@
+@import "~normalize-scss/sass/normalize/import-now";
+@import "components/global";
+
+@tailwind base;
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Utilities */
+@import "utilities/container";
+@import "utilities/clear-list";
+@import "utilities/variables";
+
+
+/* Custom Components */
+@import "components/hero-section";
+@import "components/social-link";
+@import "components/nav-menu";
+

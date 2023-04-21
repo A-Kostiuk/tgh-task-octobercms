@@ -1,0 +1,25 @@
+<section x-data>
+    <h2 class="font-bold text-2xl mb-4">List of courses</h2>
+    <template x-if="$store.courses.filteredCourses.length">
+        <ul class="flex flex-col gap-4 tablet:grid tablet:grid-cols-2 laptop:grid-cols-3">
+            <template x-for="course in $store.courses.filteredCourses">
+                <li class="flex flex-col px-4 py-2 gap-4 border-2 border-primary rounded-md min-h-[300px]">
+                    <h3 class="font-bold text-lg">
+                        <a class="font-bold text-lg text-inherit" x-text="course.title" href=""></a>
+                    </h3>
+                    <div
+                        class="flex justify-between gap-3 order-first text-sm items-center relative  mb-4 after:content-[''] after:absolute after:h-0.5 after:left-[-1rem] after:right-[-1rem] after:bottom-[-0.5rem] after:bg-primary">
+                        <p x-text="course.category"></p>
+                        <img :src="course.image" :alt="course.category" width="20" height="20" />
+                    </div>
+                    <p class="grow" x-text="course.description"></p>
+                    <p class="relative after:content-[''] after:absolute after:h-0.5 after:left-[-1rem] after:right-[-1rem] after:top-[-0.5rem] after:bg-primary"
+                       x-text="course.level"></p>
+                </li>
+            </template>
+        </ul>
+    </template>
+    <template x-if="!$store.courses.filteredCourses.length">
+        <p>No courses found</p>
+    </template>
+</section>

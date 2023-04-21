@@ -1,0 +1,24 @@
+.page__body {
+    @apply font-sans text-base font-normal text-text
+}
+
+.page__wrapper {
+    min-height: 100vh;
+    @apply min-h-screen grid grid-rows-[min-content_1fr_min-content]
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

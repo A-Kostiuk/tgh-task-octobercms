@@ -1,0 +1,40 @@
+description = "Default Layout"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ this.page.meta_title ?: placeholder('EducationalSite') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{{'assets/images/favicons/favicon.ico' | theme}}" />
+    <link rel="icon" href="{{'assets/images/favicons/favicon.svg' | theme}}" />
+    <link rel="apple-touch-icon" href="{{'assets/images/favicons/192.png' | theme}}" />
+    <link rel="manifest" href="{{'assets/images/favicons/manifest.json' | theme}}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="{{ 'assets/public/css/app.css'|theme }}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body class="page__body">
+<div class="page__wrapper">
+    <!-- Header -->
+    {% partial 'site/header' %}
+
+
+    <!-- Content -->
+    <main id="layout-content">
+        {% page %}
+    </main>
+
+    <!-- Footer -->
+    {% partial 'site/footer' %}
+</div>
+
+<!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script> -->
+<script src="{{ 'assets/public/js/app.js'|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

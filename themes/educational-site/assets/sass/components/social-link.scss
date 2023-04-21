@@ -1,0 +1,6 @@
+.social-link {
+    @apply hover:opacity-60 active:opacity-100;
+    svg path {
+        @apply fill-social;
+    }
+}

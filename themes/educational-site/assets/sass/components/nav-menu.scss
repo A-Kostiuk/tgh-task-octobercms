@@ -1,0 +1,35 @@
+.nav-list {
+    @apply flex-col gap-3 pl-5 pr-16 py-3 tablet:static tablet:flex tablet:flex-row tablet:gap-4 tablet:flex-wrap tablet:p-0;
+    &--open {
+        @apply flex only-mobile:absolute only-mobile:bg-primary only-mobile:top-0 only-mobile:inset-x-0;
+    }
+
+    &--close {
+        @apply only-mobile:hidden
+    }
+}
+
+.nav-toggle-btn {
+    @apply relative w-6 h-6 border-0 bg-transparent shadow-none tablet:hidden;
+}
+
+.nav-toggle-btn--open {
+    &:before, &:after {
+        @apply absolute content-[''] w-6 bg-black h-0.5 left-0;
+    }
+
+    &:before {
+        @apply rotate-[-45deg];
+    }
+
+    &:after {
+        @apply rotate-[45deg];
+    }
+}
+
+.nav-toggle-btn--close {
+    &:before {
+        @apply absolute content-[''] w-6 bg-black h-1 top-0 left-0 shadow-[0_9px_0_0_black,0_18px_0_0_black];
+    }
+}
+

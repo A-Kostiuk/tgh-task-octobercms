@@ -1,0 +1,63 @@
+<section x-data>
+    <h2 class="sr-only">Courses filter</h2>
+    <form class="flex flex-col gap-4"
+          @submit.prevent="$store.courses.filterCourses()"
+    >
+        <div class="flex flex-col gap-2">
+            <label class="text-lg font-bold" for="search">Search:</label>
+            <input x-model="$store.courses.searchTitle" class="p-2 border-2 border-primary rounded" id="search"
+                   type="text" placeholder="Title" />
+        </div>
+        <fieldset x-data="{title: 'Category',
+                               model: $store.courses.category,
+                               items: [
+                                  {
+                                    name: 'JavaScript',
+                                    value: 'javascript',
+                                  }, {
+                                    name: 'Python',
+                                    value: 'python',
+             }]}">
+            <legend class="mb-2 text-lg font-bold" x-text="title+':'"></legend>
+            <ul class="flex flex-col gap-2">
+                <template x-for="item in items">
+                    <li class="flex gap-2 items-center">
+                        <input type="checkbox" :id="item.value" :value="item.value" :name="item.name"
+                               x-model="$store.courses.category"
+                        />
+                        <label :for="item.value" x-text="item.name"></label>
+                    </li>
+                </template>
+            </ul>
+        </fieldset>
+        <fieldset x-data="{
+                                title: 'Level',
+                                model: $store.courses.level,
+                                items: [
+                              {
+                                name: 'Beginner',
+                                value: 'beginner',
+                              }, {
+                                name: 'Intermediate',
+                                value: 'intermediate',
+                              }, {
+                                name: 'Advanced',
+                                value: 'advanced',
+            }]}">
+            <legend class="mb-2 text-lg font-bold" x-text="title+':'"></legend>
+            <ul class="flex flex-col gap-2">
+                <template x-for="item in items">
+                    <li class="flex gap-2 items-center">
+                        <input type="checkbox" :id="item.value" :value="item.value" :name="item.name"
+                               x-model="$store.courses.level"
+                        />
+                        <label :for="item.value" x-text="item.name"></label>
+                    </li>
+                </template>
+            </ul>
+        </fieldset>
+        <input
+            class="cursor-pointer text-text bg-primary border-0 rounded hover:scale-110 ease-out duration-300 p-2"
+            type="submit" value="Show" />
+    </form>
+</section>
